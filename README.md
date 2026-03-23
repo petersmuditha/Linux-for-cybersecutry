@@ -1,4 +1,7 @@
-# 🐧 Linux Fundamentals
+# 🐧 Linux Fundamentals: System Administration & Security
+
+## Project Description
+This repository documents my training in **Linux Fundamentals** via TryHackMe. The project focuses on mastering the Linux command-line interface (CLI) to perform system audits, manage files, and understand identity security. This documentation serves as a professional portfolio for Identity and Access Management (IAM) and Technical Writing roles.
 
 ## 🧭 what is it ?
 
@@ -45,53 +48,42 @@ Linux is often perceived as more intimidating or complex than familiar operating
 
 Once we understand the importance of Linux, the next step is learning how to communicate with the system via the Command Line Interface (CLI). Below are two fundamental commands for any security professional.
 
-### 1. The `whoami` Command
-The `whoami` command answers a vital question: *"Which user am I currently logged in as?"*
+### 1. `ls` (List)
+The `ls` command displays the names of files and directories in your current location.
+* **Why it matters:** It is the first step in auditing a system. Using `ls` allows a security analyst to see hidden files and check file permissions.
 
-* **Usage:** Simply type `whoami` in the terminal.
-* **Security Relevance:** In a penetration test or a security audit, the first thing you need to know is your privilege level. Knowing if you are a low-privileged user or the **root** (administrator) determines your next moves.
+  ![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura5.PNG)
+
+
+### 2. `cd` (Change Directory)
+The `cd` command allows you to move between different directories in the filesystem.
+* **Why it matters:** You must be able to navigate to sensitive areas, such as `/etc` (configuration) or `/var/log` (audit logs), to perform security checks.
+
+  ![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura6.PNG)
+
+### 3. `cat` (Concatenate)
+The `cat` command reads the content of a file and displays it in the terminal.
+* **Why it matters:** It allows you to inspect the contents of configuration files (like `/etc/passwd`) quickly without using an editor that might accidentally modify them.
+
+  ![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura7.PNG)
+
+### 4. `whoami` (Who Am I)
+This command prints the username associated with the current session.
+* **Why it matters:** In **Identity Management (IAM)**, verifying which user you are is crucial. It ensures you are not performing tasks as `root` unless absolutely necessary, following the **Principle of Least Privilege**.
 
 ![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura2.jpg)
 
-### 2. The `echo` Command
-The `echo` command is used to print text or variables directly to the terminal output.
+  ### 5. `echo` (Echo)
+The `echo` command prints text or variables to the terminal.
+* **Why it matters:** It is used to display system variables (like `$PATH`) and is essential for creating automated security scripts.
 
-* **Example:** Running `echo "Linux is awesome"` will display that exact string on your screen.
-* **Security Relevance:** Beyond simple printing, `echo` is essential in **automation scripts**. It is used to create configuration files on the fly or to verify system environment variables during a security hardening process.
+  ![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura3.PNG)
 
-![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura3.PNG)
+### 6. `pwd` (Print Working Directory)
+This command shows the full path of the directory you are currently working in.
+* **Why it matters:** It provides essential context. Before running a command to delete or modify files, you must be certain of your exact location in the system.
 
-## 📂 File System Navigation
-
-To move around the Linux file system and interact with files, we use a set of core navigation commands. Mastering these is the first step toward effective system administration and security auditing.
-
-### 1. The `pwd` Command (Print Working Directory)
-Before moving anywhere, you need to know where you are. `pwd` shows the full path of your current directory.
-* **Usage:** `pwd`
-* **Why it matters:** In cybersecurity, you must always be aware of your location to avoid running scripts or deleting files in the wrong directory.
-
-![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura4.PNG)
-
-### 2. The `ls` Command (List)
-The `ls` command reveals the contents of a directory (files and folders).
-* **Usage:** `ls` (or `ls -la` to see hidden files and detailed permissions).
-* **Why it matters:** Attackers often hide malicious files by starting the filename with a dot (e.g., `.hidden_malware`). Using `ls -la` allows a security analyst to spot these hidden threats.
-
-![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura5.PNG)
-
-### 3. The `cd` Command (Change Directory)
-The `cd` command allows you to move between folders.
-* **Usage:** `cd [directory_name]` (e.g., `cd /var/log`).
-* **Why it matters:** Navigating to log directories is a daily task for a security writer documenting incident response steps.
-
-![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura6.PNG)
-
-### 4. The `cat` Command (Concatenate)
-The `cat` command is the quickest way to read the contents of a file without opening an editor.
-* **Usage:** `cat [filename]` (e.g., `cat flag.txt`).
-* **Why it matters:** On TryHackMe, `cat` is your best friend for reading "flags." In the real world, it’s used to quickly inspect configuration files or system logs for suspicious activity.
-
-![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura7.PNG)
+  ![image alt](https://github.com/petersmuditha/Linux-for-cybersecutry/blob/0d8ed979dd37fe43dcf48b0d73b9e676b0888044/Cattura4.PNG)
 
 ## 🏁 Conclusion & Next Steps
 
@@ -113,5 +105,5 @@ I'm actively looking for opportunities as a **Cybersecurity Technical Writer** o
 
 ---
 
-*Last updated:  22/02/2026*
+*Last updated:  23/03/2026*
 *Documented by [Muditha Anuruddha Peters] during the TryHackMe Pre-Security Path.*
